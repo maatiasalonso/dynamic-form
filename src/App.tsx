@@ -11,6 +11,8 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { ErrorPage } from "./components/error";
+import { LoadingPage } from "./components/loading";
 
 const URL: string =
   "https://run.mocky.io/v3/c7a96306-c122-4037-8b27-a2120b9e6f04";
@@ -39,39 +41,8 @@ function App() {
 
   return (
     <>
-      {error && (
-        <Card style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
-          <Typography variant="h5" component="div">
-            Error
-          </Typography>
-          <CardContent style={{ padding: "4rem" }}>
-            <Typography variant="h6" component="div">
-              Hubo un problema al obtener los datos
-            </Typography>
-          </CardContent>
-          <CardActions
-            style={{
-              display: "flex",
-              justifyContent: "end",
-              marginRight: "2rem",
-            }}
-          >
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={() => window.location.reload()}
-            >
-              Volver a intentar
-            </Button>
-          </CardActions>
-        </Card>
-      )}
-      {loading && (
-        <Stack style={{ alignItems: "center" }} gap={2}>
-          <CircularProgress />
-          <span>Cargando...</span>
-        </Stack>
-      )}
+      {error && <ErrorPage error={error} />}
+      {loading && <LoadingPage />}
       {data && (
         <form>
           <Card style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
