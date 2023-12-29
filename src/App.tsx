@@ -39,7 +39,7 @@ function App() {
 
   return (
     <>
-      {error && <ErrorPage error={error} />}
+      {error && <ErrorPage />}
       {loading && <LoadingPage />}
       {data && (
         <form>

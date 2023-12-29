@@ -6,10 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 
-interface ErrorProps {
-  error: any;
-}
-export function ErrorPage({ error }: ErrorProps) {
+export function ErrorPage() {
   return (
     <Card style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
       <Typography variant="h5" component="div">
