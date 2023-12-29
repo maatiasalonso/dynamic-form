@@ -26,6 +26,7 @@ function App() {
 
   const handleClear = () => {
     setFormData({});
+    window.location.reload();
     setIsSubmitted(false);
   };
 
