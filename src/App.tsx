@@ -6,8 +6,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  CircularProgress,
-  Stack,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
